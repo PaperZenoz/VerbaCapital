@@ -112,14 +112,16 @@ $(document).ready(function () {
         speed: 800
     })
 
-    $(document).on('wheel', (function (e) {
-        e.preventDefault();
-        if (e.originalEvent.deltaY < 0) {
-            $('.gen-slider').slick('slickPrev');
-        } else {
-            $('.gen-slider').slick('slickNext');
-        }
-    }));
+    if ($('.gen-slider').length) {
+        $(document).on('wheel', (function (e) {
+            e.preventDefault();
+            if (e.originalEvent.deltaY < 0) {
+                $('.gen-slider').slick('slickPrev');
+            } else {
+                $('.gen-slider').slick('slickNext');
+            }
+        }));
+    }
 
 
     //О нас
@@ -159,7 +161,7 @@ $(document).ready(function () {
                 }, {
                     // Опции
                     // Своё изображение иконки метки.
-                    iconImageHref: '../../images/contacts/1.svg',
+                    iconImageHref: 'images/contacts/1.svg',
                     // Размеры метки.
                     iconImageSize: [34, 50],
                     // Смещение левого верхнего угла иконки относительно
@@ -186,7 +188,7 @@ $(document).ready(function () {
                 }, {
                     // Опции
                     // Своё изображение иконки метки.
-                    iconImageHref: '../../images/contacts/1.svg',
+                    iconImageHref: 'images/contacts/1.svg',
                     // Размеры метки.
                     iconImageSize: [34, 50],
                     // Смещение левого верхнего угла иконки относительно
