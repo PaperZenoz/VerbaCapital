@@ -143,66 +143,66 @@ $(document).ready(function () {
 
     //Контакты
 
+
     if ($('#map-1').length) {
+        function init() {
+            var myMap_1 = new ymaps.Map("map-1", {
+                    center: [55.028894, 82.926493],
+                    zoom: 15
+                }),
+
+                // Создаем метку с помощью вспомогательного класса.
+                myPlacemark1 = new ymaps.Placemark([55.028894, 82.926493], {
+                    // Свойства.
+                    // Содержимое хинта.
+                    hintContent: 'Главный офис'
+                }, {
+                    // Опции
+                    // Своё изображение иконки метки.
+                    iconImageHref: '../../images/contacts/1.svg',
+                    // Размеры метки.
+                    iconImageSize: [34, 50],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-20, -50]
+                })
+
+
+            // Добавляем все метки на карту.
+            myMap_1.geoObjects.add(myPlacemark1)
+            myMap_1.setType('yandex#map');
+
+
+            var myMap_2 = new ymaps.Map("map-2", {
+                    center: [55.019398, 82.940983],
+                    zoom: 15
+                }),
+
+                // Создаем метку с помощью вспомогательного класса.
+                myPlacemark1 = new ymaps.Placemark([55.019398, 82.940983], {
+                    // Свойства.
+                    // Содержимое хинта.
+                    hintContent: 'Отдел продаж'
+                }, {
+                    // Опции
+                    // Своё изображение иконки метки.
+                    iconImageHref: '../../images/contacts/1.svg',
+                    // Размеры метки.
+                    iconImageSize: [34, 50],
+                    // Смещение левого верхнего угла иконки относительно
+                    // её "ножки" (точки привязки).
+                    iconImageOffset: [-20, -50]
+                })
+
+
+            // Добавляем все метки на карту.
+            myMap_2.geoObjects.add(myPlacemark1)
+            myMap_2.setType('yandex#map');
+
+
+        }
+
         ymaps.ready(init);
-
-    }
-
-    function init() {
-        var myMap_1 = new ymaps.Map("map-1", {
-                center: [55.028894, 82.926493],
-                zoom: 15
-            }),
-
-            // Создаем метку с помощью вспомогательного класса.
-            myPlacemark1 = new ymaps.Placemark([55.028894, 82.926493], {
-                // Свойства.
-                // Содержимое хинта.
-                hintContent: 'Главный офис'
-            }, {
-                // Опции
-                // Своё изображение иконки метки.
-                iconImageHref: '../../images/contacts/1.svg',
-                // Размеры метки.
-                iconImageSize: [34, 50],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-20, -50]
-            })
-
-
-        // Добавляем все метки на карту.
-        myMap_1.geoObjects.add(myPlacemark1)
-        myMap_1.setType('yandex#map');
-
-
-        var myMap_2 = new ymaps.Map("map-2", {
-                center: [55.019398, 82.940983],
-                zoom: 15
-            }),
-
-            // Создаем метку с помощью вспомогательного класса.
-            myPlacemark1 = new ymaps.Placemark([55.019398, 82.940983], {
-                // Свойства.
-                // Содержимое хинта.
-                hintContent: 'Отдел продаж'
-            }, {
-                // Опции
-                // Своё изображение иконки метки.
-                iconImageHref: '../../images/contacts/1.svg',
-                // Размеры метки.
-                iconImageSize: [34, 50],
-                // Смещение левого верхнего угла иконки относительно
-                // её "ножки" (точки привязки).
-                iconImageOffset: [-20, -50]
-            })
-
-
-        // Добавляем все метки на карту.
-        myMap_2.geoObjects.add(myPlacemark1)
-        myMap_2.setType('yandex#map');
-
-
     }
 
 
