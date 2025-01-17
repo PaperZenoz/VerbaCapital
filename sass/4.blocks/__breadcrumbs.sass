@@ -1,0 +1,33 @@
+.breadcrumbs
+  line-height: 1.4
+
+
+  &__wrap
+    display: flex
+    padding-top: 40px
+    padding-bottom: 30px
+
+
+  &__link
+    padding-right: 15px
+    margin-right: 15px
+    position: relative
+    color: $gray-8e
+
+    &:before
+      content: ''
+      width: 4px
+      height: 4px
+      @include r(50%)
+      background-color: $red
+      display: block
+      position: absolute
+      right: 0
+      top: 50%
+      transform: translateY(-50%)
+
+    &:last-child
+      color: $black
+      pointer-events: none
+      &:before
+        display: none

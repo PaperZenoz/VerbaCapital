@@ -1,0 +1,18 @@
+{% include "./header.njk" %}
+
+<!-- content -->
+<div class="content-wrapper">
+    {% block content %}{% endblock %}
+</div>
+<!-- content -->
+
+
+{% if page.title != 'Главная | Верба Капитал' %}
+    {% include "./footer.njk" %}
+{% endif %}
+
+
+</body>
+
+
+

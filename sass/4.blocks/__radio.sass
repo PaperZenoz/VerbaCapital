@@ -1,0 +1,31 @@
+.radio
+  padding-left: 25px
+  position: relative
+  > span:before
+    content: ''
+    display: block
+    width: 16px
+    height: 16px
+    border: 1px solid black
+    border-radius: 50%
+    background-color: white
+    position: absolute
+    top: -2px
+    left: 0
+    z-index: 10
+    cursor: pointer
+  &__button
+    position: absolute
+    opacity: 0
+    z-index: -1
+    &:checked + span:before
+      width: 8px
+      height: 8px
+      border: 4px solid black
+      z-index: 10
+  &__sign
+    color: gray
+    font-size: 10px
+
+
+

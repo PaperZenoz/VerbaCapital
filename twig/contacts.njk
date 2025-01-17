@@ -1,0 +1,86 @@
+{% set page = { title: 'Контакты | Верба Капитал' } %}
+{% extends "./2.parts/main.njk" %}
+{% block content %}
+    {% set  _ = 'back' %}
+    <div href="#" class="{{ _ }}">
+        <div class="inner-container">
+            <a href="#" class="{{ _ }}__ancor">
+                <svg width="25" height="13" viewBox="0 0 25 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M24 6.5L1 6.5M1 6.5L6.88235 12.5M1 6.5L6.88235 0.499999" stroke="#D4D4D4"
+                          stroke-linecap="round"/>
+                </svg>
+                Назад
+            </a>
+        </div>
+    </div>
+
+
+   {% set  _ = 'contacts' %}
+    <div class="{{_}}">
+        <div class="inner-container">
+            <div class="{{_}}__wrap">
+                <h1 class="h2 animation-element">
+                    КОНТАКТЫ
+                </h1>
+                <div class="{{_}}__list">
+                    <div class="{{_}}__item">
+                        <div id="map-1" class="{{_}}__map">
+
+                        </div>
+                        <div class="{{_}}__content animation-element">
+                            <h3 class="h3">
+                                ГЛАВНЫЙ ОФИС
+                            </h3>
+
+
+
+
+                            <div class="{{_}}__contacts">
+                                <div class="{{_}}__telephone">
+                                    8 (383) 209-13-70
+                                </div>
+                                <span>Новосибирск, Россия</span>
+                                <span>630099, ул. Депутатская, 46, офис 1113</span>
+                                <span>office@verbacapital.ru</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="{{_}}__item">
+                        <div id="map-2" class="{{_}}__map">
+
+                        </div>
+                        <div class="{{_}}__content animation-element">
+                            <h3 class="h3">
+                                отдел продаж
+                            </h3>
+
+
+
+
+
+
+
+
+
+
+                            <div class="{{_}}__contacts">
+                                <div class="{{_}}__telephone">
+                                    8 (383) 209-90-09
+                                </div>
+                                <span>Новосибирск, Россия</span>
+                                <span>ул. Московская, 77</span>
+                                <span>sale@vc-d.ru</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock content %}

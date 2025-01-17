@@ -1,0 +1,101 @@
+//ПРОЕКТНЫЕ
+$green: #92C020
+$white: #FCFCFC
+$grey: #D4D4D4
+$light-grey: #F9F9F9
+$dark-grey: #464646
+$light-grey-2: #F1F1F1
+$grey-2: #B1B1B1
+
+
+.contacts
+  &__wrap
+    padding-top: 20px
+
+    > .h2
+      margin-bottom: 0
+      color: $grey
+
+  &__item
+    padding: 90px 0
+    display: grid
+    grid-template-columns: 570px auto
+    grid-gap: 125px
+    border-bottom: 1px solid $grey
+
+    &:last-child
+      border-bottom: 1px solid transparent
+
+    @media screen and (max-width: 1023px)
+      padding: 50px 0
+      grid-template-columns: 1fr
+      grid-gap: 20px
+
+    &:first-child
+      @media screen and (max-width: 1023px)
+        padding-top: 20px
+
+
+
+
+
+
+
+  &__content
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    .h3
+      color: $grey
+      @extend %400 !optional
+      @extend %up !optional
+      letter-spacing: 3px
+
+  &__content.animation-element
+    opacity: 0
+    position: relative 
+
+  &__content.animated
+    animation: text-up 2s forwards
+
+
+
+  &__contacts
+    @extend %inter !optional
+
+    span
+      display: block
+
+  &__telephone
+    margin-bottom: 20px
+
+
+  &__map
+    aspect-ratio: 570 / 390
+    border-radius: 20px
+    overflow: hidden
+    background-color: $grey
+    width: 100%
+    height: 100%
+    @media screen and (max-width: 1023px)
+      aspect-ratio: initial
+      height: 220px
+
+
+
+
+
+
+  .ymaps-layers-pane
+    -webkit-filter: grayscale(100%)
+    filter: grayscale(100%)
+
+  [class*="copyrights-pane"]
+    display: none !important
+    + ymaps
+      display: none !important
+
+
+
+

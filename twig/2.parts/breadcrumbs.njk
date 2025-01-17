@@ -1,0 +1,13 @@
+{% set  bread = [
+    'Главная',
+    'Образ юбка С-1020 и Футболка С-1020',
+    'Юбка миди С-1010'] %}
+
+
+<div class="breadcrumb">
+    {% for item in bread %}
+        <a href="#" class="breadcrumb__link">{{ item }}</a>
+    {% endfor %}
+</div>
+
+

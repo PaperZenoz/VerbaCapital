@@ -1,0 +1,40 @@
+{% set page = { title: 'Ссылки | Верба Капитал' } %}
+{% extends "./2.parts/main.njk" %}
+{% block content %}
+    {% set  list = [
+        {
+            title: 'Главная',
+            subtitle: 'gen'
+
+        },{
+            title: 'О нас',
+            subtitle: 'about-us'
+
+        },{
+            title: 'Сервис',
+            subtitle: 'service'
+
+        },{
+            title: 'Новости',
+            subtitle: 'news'
+
+        },{
+            title: 'Контакты',
+            subtitle: 'contacts'
+
+        },{
+            title: 'Тендеры',
+            subtitle: 'tenders'
+
+        },{
+            title: 'Проекты',
+            subtitle: 'projects'
+        }] %}
+    <div class="container" style="margin-top: 50px">
+        {% for item in list %}
+            <a href="{{ item.subtitle }}.html" class="btn"
+               style="min-width: 100%; margin-bottom: 20px;">{{ item.title }}</a>
+        {% endfor %}
+    </div>
+
+{% endblock content %}

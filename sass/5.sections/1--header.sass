@@ -1,0 +1,327 @@
+//ПРОЕКТНЫЕ
+$green: #92C020
+$white: #FCFCFC
+$grey: #D4D4D4
+$light-grey: #F9F9F9
+$dark-grey: #464646
+$light-grey-2: #F1F1F1
+$grey-2: #B1B1B1
+$transparent: transparent
+
+.header
+  padding-top: 35px
+  padding-bottom: 35px
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  z-index: 2
+  background-color: $transparent
+  border-bottom: 1px solid $transparent
+  @media screen and (max-width: 1439px)
+    padding-top: 15px
+    padding-bottom: 15px
+    background-color: white
+
+  &__wrap
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+  &__right
+    display: flex
+    align-items: center
+
+  &__telephone
+    font-family: 'TT Firs Neue'
+    margin-right: 25px
+    @media screen and (max-width: 1439px)
+      font-size: 0
+      position: relative
+      margin-right: 20px
+
+      &:before
+        content: ''
+        width: 20px
+        height: 20px
+        display: block
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.8269 12.5079C16.4462 12.127 16.0654 12 15.6846 12C15.3039 12 14.8596 12.1905 14.5423 12.5079C13.9712 13.0794 13.4635 13.5873 12.8923 14.1587C12.8289 14.2222 12.702 14.2857 12.6385 14.2857C12.575 14.2857 12.5116 14.2857 12.4481 14.2222C12.0673 14.0317 11.6866 13.8413 11.3693 13.6508C9.78274 12.6349 8.45006 11.3651 7.30776 9.90476C6.73661 9.20635 6.22892 8.44444 5.84815 7.55556C5.65777 7.42857 5.72123 7.30159 5.84815 7.1746C6.4193 6.66667 6.92699 6.09524 7.49814 5.5873C8.25968 4.8254 8.25968 3.93651 7.49814 3.1746C7.05391 2.73016 6.67315 2.34921 6.22892 1.90476C5.72123 1.39683 5.277 0.952381 4.83277 0.571429C4.51546 0.190476 4.07124 0 3.69047 0C3.3097 0 2.86547 0.190476 2.54817 0.507936C1.97702 1.07937 1.40587 1.65079 0.834714 2.15873C0.327025 2.66667 0.0731799 3.30159 0.00971869 4C-0.0537425 5.14286 0.200102 6.22222 0.58087 7.30159C1.40587 9.46032 2.61163 11.4286 4.1347 13.2063C6.16546 15.619 8.57698 17.5238 11.3693 18.8571C12.6385 19.4921 13.9712 19.9365 15.3673 20H15.6212C16.5096 20 17.2712 19.746 17.9058 19.0476C18.35 18.5397 18.9212 18.0317 19.4288 17.5238C20.1904 16.7619 20.1904 15.873 19.4288 15.1111C18.5404 14.2857 17.7154 13.3968 16.8269 12.5079Z' fill='%2392C020'/%3E%3C/svg%3E%0A")
+
+  &__menu-button
+    width: 44px
+    height: 44px
+    border-radius: 10px
+    background-color: $light-grey-2
+    display: flex
+    align-items: center
+    justify-content: center
+    transition: all ease .3s
+    line-height: 0
+
+    svg rect
+      @extend %transition !optional
+
+    .header__menu-button-normal
+      display: block
+
+    .header__menu-button-active
+      display: none
+
+  &__menu-button:hover
+    background-color: $green
+
+    svg rect
+      fill: white
+
+  &__logo
+    @media screen and (max-width: 1439px)
+      svg
+        width: 90px
+        height: auto
+
+
+.header.fixed
+  background-color: white
+  //border-bottom: 1px solid $grey
+  @extend %transition !optional
+
+.menu
+  position: fixed
+  background: $light-grey
+  left: 0
+  right: 0
+  top: 0
+  bottom: 0
+  z-index: 1
+  opacity: 0
+  pointer-events: none
+  @extend %transition !optional
+  @media screen and (max-width: 1439px)
+    background-color: white
+
+  &:before
+    content: ''
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    background-color: white
+    width: 40vw
+    @media screen and (max-width: 1439px)
+      display: none
+
+  &__wrap
+    margin-top: 135px
+    display: grid
+    grid-template-columns: 6fr 4fr
+    position: relative
+    letter-spacing: 4px
+
+    &::-webkit-scrollbar-track
+      border-radius: 3px
+      height: 3px
+      background: $light-grey
+
+    &::-webkit-scrollbar
+      width: 3px
+      height: 3px
+      background: $green
+
+    &::-webkit-scrollbar-thumb
+      border-radius: 0px
+      height: 3px
+      background: $green
+
+    @media screen and (max-width: 1439px)
+      grid-template-columns: 1fr
+      grid-gap: 30px
+      height: calc(100vh - 135px)
+      overflow-y: scroll
+      margin-top: 115px
+      padding-right: 15px
+
+  &__title
+    font-size: 50px
+    color: $dark-grey
+    @extend %up !optional
+    letter-spacing: 4px
+    padding-left: 60px
+    display: flex
+    align-items: center
+    gap: 10px
+    margin-bottom: 20px
+    @media screen and (max-width: 1439px)
+      font-size: 40px
+      padding-left: 0px
+
+
+    svg path
+      stroke: $dark-grey
+      @extend %transition !optional
+
+    &:hover
+      gap: 20px
+
+      svg path
+        stroke: $green
+
+  &__projects
+    position: relative
+
+  &__projects-list
+    height: calc(100vh - (120px + 100px + 80px))
+    position: relative
+    @media screen and (max-width: 1439px)
+      height: initial
+
+
+    .mCSB_scrollTools
+      right: auto
+
+    .mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+      background-color: $green
+
+    .mCSB_scrollTools .mCSB_draggerRail
+      background-color: #ECECEC
+
+    .mCSB_inside > .mCSB_container
+      margin-right: 0
+
+  &__projects-item
+    display: flex
+    font-size: 24px
+    border-bottom: 1px solid #ECECEC
+    height: 75px
+    justify-content: space-between
+    align-items: center
+    margin-left: 80px
+    padding-left: 20px
+    opacity: 0
+    @extend %500 !optional
+    @media screen and (max-width: 1439px)
+      padding-left: 0
+      margin-left: 0
+      font-size: 16px
+      height: 55px
+
+    &:after
+      content: ''
+      width: 40px
+      height: 12px
+      background-image: url("data:image/svg+xml,%3Csvg width='43' height='15' viewBox='0 0 43 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7.5L41 7.5M41 7.5L35.1176 1.5M41 7.5L35.1176 13.5' stroke='%23D4D4D4' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A")
+      background-position: center
+      background-repeat: no-repeat
+      background-size: contain
+      margin-right: 30px
+      @extend %transition !optional
+      @media screen and (max-width: 1439px)
+        margin-right: 0
+
+
+    &:hover:after
+      margin-right: 20px
+      background-image: url("data:image/svg+xml,%3Csvg width='42' height='15' viewBox='0 0 42 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 7.5L41 7.5M41 7.5L35.1176 1.5M41 7.5L35.1176 13.5' stroke='%2392C020' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+
+
+    &:first-child
+      border-top: 1px solid #ECECEC
+
+  &__list
+    @media screen and (max-width: 1439px)
+      order: -1
+
+  &__list-item
+    font-size: 50px
+    padding-bottom: 50px
+    @extend %up !optional
+    display: block
+    color: #C5C5C5
+    padding-left: 120px
+    @media screen and (max-width: 1439px)
+      padding-left: 0
+      padding-bottom: 20px
+      font-size: 40px
+
+    &:last-child
+      padding-bottom: 0
+
+  &__contacts
+    display: none
+    font-size: 14px
+    gap: 20px
+    align-items: center
+
+    strong
+      @extend %500 !optional
+      letter-spacing: 3px
+      color: $grey
+      line-height: 1
+      
+    a svg path
+      @extend %transition !optional
+      fill: $grey
+      
+    a:hover svg path
+      fill: $green
+
+    @media screen and (max-width: 1439px)
+      display: flex
+      margin-bottom: 30px
+
+      
+.menu > .container
+  @media screen and (max-width: 1439px)
+  	padding-right: 0 
+  	
+  
+  	
+  
+
+@keyframes menu-item
+  0%
+    opacity: 0
+    padding-left: 0
+  100%
+    opacity: 1
+    padding-left: 20px
+
+@media screen and (max-width: 1439px)
+  @keyframes menu-item
+    0%
+      padding-left: 0
+      opacity: 0
+    100%
+      padding-left: 0
+      opacity: 1
+
+
+.menu.open
+  opacity: 1
+  pointer-events: auto
+
+  .menu__projects-item
+    animation: menu-item 0.9s 1 forwards
+
+.menu.open + .content-wrapper > .gen-footer
+  @media screen and (max-width: 1439px)
+    display: none
+
+
+
+
+
+
+
+
+.header__menu-button.open
+  .header__menu-button-normal
+    display: none
+
+  .header__menu-button-active
+    display: block
+
+
+
+
+
+

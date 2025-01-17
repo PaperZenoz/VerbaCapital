@@ -1,0 +1,22 @@
+.inner-navigation
+  &__wrap
+    display: flex
+    margin-bottom: 45px
+    border-bottom: 1px solid $gray-ee
+
+
+  &__item
+    margin-right: 40px
+    @extend %rlc !optional
+    transition: all ease .3s
+    @extend %up
+    @extend %400
+    padding-bottom: 15px
+
+    &.active
+      color: $main-color
+      border-bottom: 1px solid $main-color
+      
+    &:hover
+      color: $main-color
+      border-bottom: 1px solid $main-color

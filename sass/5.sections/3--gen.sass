@@ -1,0 +1,141 @@
+$main-color: #f97417
+$transparent: transparent
+$black: black
+$white: white
+
+//ШАБЛОННЫЕ
+$gray: gray
+$dark-gray: gray
+$gray-ee: gray
+$gray-d9: gray
+$gray-8e: gray
+$yellow: yellow
+$red: red
+
+//ПРОЕКТНЫЕ
+$green: #92C020
+$white: #FCFCFC
+$grey: #D4D4D4
+$light-grey: #F9F9F9
+$dark-grey: #464646
+$light-grey-2: #F1F1F1
+$grey-2: #B1B1B1
+
+.gen-slider
+  height: calc(100vh - (120px + 100px))
+  border-radius: 25px
+  overflow: hidden
+  margin-bottom: 35px
+  @media screen and (max-width: 1439px)
+    height: calc(100vh - (49px + 100px))
+
+
+  &__item
+    height: calc(100vh - (120px + 100px)) !important
+    position: relative
+    @media screen and (max-width: 1439px)
+      height: calc(100vh - (40px + 100px)) !important
+
+    img
+      @media screen and (max-width: 1279px)
+        display: none
+
+
+  &__text
+    font-size: 18px
+    color: $black
+    opacity: 0.5 
+    max-width: 470px
+    position: absolute
+    left: 60px
+    top: 40px
+    z-index: 1 
+    @extend %inter !optional
+    @extend %transition !optional
+    line-height: 1.4
+    @media screen and (max-width: 1279px)
+      color: white
+      opacity: 1
+      left: 30px
+      top: 30px
+      font-size: 14px
+      margin-right: 30px
+
+
+  &__mobile-img, &__mobile-svg
+    display: none !important
+    @media screen and (max-width: 1279px)
+      display: block !important
+
+  &__mobile-svg
+    position: absolute
+    left: 50% !important
+    top: 50% !important
+    width: calc(100% - 80px) !important
+    height: auto !important
+    transform: translate(-50%, -50%)
+    max-width: 400px
+    object-fit: initial !important
+
+  .gen-slider__desktop-img + .gen-slider__desktop-img
+    opacity: 0
+    transition: all ease .3s
+
+  .gen-slider__desktop-img
+    @media screen and (max-width: 1279px) 
+      display: none
+
+
+.gen-slider__item:hover
+  .gen-slider__text
+    color: $white
+    opacity: 1
+
+  .gen-slider__desktop-img + .gen-slider__desktop-img
+    opacity: 1
+
+
+.gen-footer
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  z-index: 2
+  height: 65px
+  @media screen and (max-width: 1439px)
+    height: 40px
+
+
+
+
+
+  &__wrap
+    display: flex
+    align-items: center
+    gap: 20px
+
+  &__title
+    font-size: 14px
+    color: $grey
+    @extend %fn !optional
+    @extend %500 !optional
+    letter-spacing: 3px
+
+
+  &__social
+    display: flex
+    align-items: flex-end
+    gap: 20px
+
+    path
+      transition: all ease .3s
+
+    svg:hover
+      path
+        fill: $green
+
+    
+
+
+
+  

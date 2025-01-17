@@ -1,0 +1,35 @@
+.checkbox
+  position: absolute
+  z-index: -1
+  opacity: 0
+  width: auto
+
+  & + div
+    display: inline-flex
+    align-items: center
+    user-select: none
+    position: relative
+    cursor: pointer
+    padding-left: 35px
+
+
+
+  & + div:before
+    position: absolute
+    left: 0
+    top: 0px
+    content: ''
+    display: inline-block
+    width: 20px
+    height: 20px
+    @include r(5px)
+    flex-shrink: 0
+    flex-grow: 0
+    background-repeat: no-repeat
+    background-position: center center
+    background-size: 50% 50%
+    background-color: white
+
+  &:checked + div::before
+    background-color: #D9D9D9
+    background-image: url("data:image/svg+xml,%3Csvg width='13' height='9' viewBox='0 0 13 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M12.197 1.13636C12.4899 1.42925 12.4899 1.90412 12.197 2.19702L6.23744 8.15658C5.55402 8.83999 4.44598 8.83999 3.76256 8.15658L1.13634 5.53035C0.843443 5.23746 0.843443 4.76258 1.13634 4.46969C1.42923 4.1768 1.9041 4.1768 2.197 4.46969L4.82322 7.09592C4.92085 7.19355 5.07914 7.19355 5.17678 7.09592L11.1363 1.13636C11.4292 0.843464 11.9041 0.843464 12.197 1.13636Z' fill='%230F1729'/%3E%3C/svg%3E%0A")

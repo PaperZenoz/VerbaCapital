@@ -1,0 +1,77 @@
+    <style>
+        .ancors {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+
+        .ancors .btn {
+            max-width: 100%;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+
+
+
+    {% set  list = [{
+        title: 'Главная',
+        subtitle: 'general'
+    },    {
+        title: 'Страница образа',
+        subtitle: 'style'
+    },   {
+        title: 'Карточка продукта',
+        subtitle: 'product-card'
+    },   {
+        title: 'Корзина',
+        subtitle: 'basket'
+    },   {
+        title: 'Каталог',
+        subtitle: 'catalog'
+    },   {
+        title: 'Личный кабинет',
+        subtitle: 'personal-account'
+    },   {
+        title: 'Личные данные',
+        subtitle: 'personal-data'
+    },   {
+        title: 'Профили заказов',
+        subtitle: 'personal-profiles'
+    }, {
+        title: 'Подписки',
+        subtitle: 'personal-subscriptions'
+    }, {
+        title: 'Бонусы',
+        subtitle: 'personal-bonuses'
+    }, {
+        title: 'История заказов',
+        subtitle: 'personal-history'
+    }, {
+        title: 'Оформление заказа',
+        subtitle: 'order'
+    }, {
+        title: 'О бренде',
+        subtitle: 'about'
+    }, {
+        title: 'Контакты',
+        subtitle: 'contacts'
+    }, {
+        title: 'Информация о доставке',
+        subtitle: 'information'
+    }, {
+        title: 'Условия оплаты',
+        subtitle: 'conditions'
+    }] %}
+
+
+
+    <div class="container">
+        <div class="ancors section">
+            {% for item in list %}
+                <a href="{{ item.subtitle }}.html" class="btn">{{ item.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+

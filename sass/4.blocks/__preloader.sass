@@ -1,0 +1,165 @@
+#preloader
+  position: fixed
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: white
+  z-index: 100000000000
+  animation: preloader 1s forwards
+  animation-delay: 5s
+  overflow: hidden
+  .container
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    animation: preloader-container 2s forwards
+    animation-delay: 2s 
+
+.preloader-logo
+  display: inline-block
+  position: relative
+  left: 50%
+  transform: translateX(-50%)
+  animation: preloader-logo 2s forwards
+  animation-delay: 2s
+  svg
+    width: 25vw
+    height: auto
+    animation: preloader-svg 2s forwards
+    animation-delay: 2s
+
+    path
+      stroke: black
+      stroke-width: 0.5
+      stroke-dashoffset: 256.6
+      stroke-dasharray: 256.6
+      animation: paint 2s forwards
+
+.preloader-text
+  display: flex
+  width: 100%
+  flex-direction: column
+  position: absolute
+  top: 50%
+  transform: translateY(-50%) 
+  font-size: 60px
+  @extend %fn
+  @extend %500 !optional
+  color: $grey
+  letter-spacing: 10px
+  div
+    position: relative
+    height: 60px
+    span
+      position: absolute
+      opacity: 0
+  div:first-child
+    margin-bottom: 10px
+    span
+      left: -100vw
+      animation: preloader-text-top 2s forwards
+      animation-delay: 3.5s
+  div:last-child
+    span
+      right: -100vw
+      animation: preloader-text-bottom 2s forwards
+      animation-delay: 3.5s
+
+@keyframes preloader-text-top
+  0%
+    left: -100vw
+    opacity: 0
+  50%
+    left: 20vw
+    opacity: 1
+  70%
+    left: 20vw
+    opacity: 1
+  100%
+    left: 100vw
+    opacity: 0
+
+
+@keyframes preloader-text-bottom
+  0%
+    right: -100vw
+    opacity: 0
+  50%
+    right: 20vw
+    opacity: 1
+  70%
+    right: 20vw
+    opacity: 1
+  100%
+    right: 100vw
+    opacity: 0
+
+
+
+
+@keyframes paint
+  0%
+    fill: transparent
+    stroke-dashoffset: 256.6
+  40%
+    fill: transparent
+    stroke-width: 0.5
+  70%
+    fill: auto
+  90%
+    stroke-width: 0.1
+  100%
+    stroke-width: 0
+    stroke-dashoffset: 200
+
+
+@keyframes preloader
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+    pointer-events: none
+
+
+
+
+
+@keyframes preloader-container
+  0%
+    top: 50%
+    transform: translateY(-50%)
+  100%
+    top: 35px
+    transform: translateY(0%)
+
+@keyframes preloader-logo
+  0%
+    left: 50%
+    transform: translateX(-50%)
+  100%
+    left: 0%
+    transform: translateX(0%)
+
+
+@keyframes preloader-svg
+  0%
+    width: 25vw
+  100%
+    width: 108px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
