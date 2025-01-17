@@ -57,8 +57,8 @@ $(document).ready(function () {
     //Поднималка
     var amountScrolled = 200;
 
-    $(window).scroll(function() {
-        if ( $(window).scrollTop() > amountScrolled ) {
+    $(window).scroll(function () {
+        if ($(window).scrollTop() > amountScrolled) {
             $('a.up-btn').fadeIn();
         } else {
             $('a.up-btn').fadeOut();
@@ -143,7 +143,10 @@ $(document).ready(function () {
 
     //Контакты
 
-    ymaps.ready(init);
+    if ($('#map-1').length) {
+        ymaps.ready(init);
+
+    }
 
     function init() {
         var myMap_1 = new ymaps.Map("map-1", {
